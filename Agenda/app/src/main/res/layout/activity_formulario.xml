@@ -1,31 +1,41 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <EditText android:hint="Nome"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText android:hint="Nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/formulario_nome"/>
+
+        <EditText android:hint="Endereço"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+            android:id="@+id/formulario_endereco"/>
 
-    <EditText android:hint="Endereço"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+        <EditText android:hint="Telefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:id="@+id/formulario_telefone"/>
 
-    <EditText android:hint="Telefone"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+        <EditText android:hint="Site"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:id="@+id/formulario_site"/>
 
-    <EditText android:hint="Site"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+        <RatingBar android:hint="Nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:max="10"
+        android:layout_gravity="center"/>
+        <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+            android:id="@+id/formulario_salvar"/>
+    </LinearLayout>
 
-    <RatingBar android:hint="Nome"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:numStars="5"
-    android:max="10"
-    android:layout_gravity="center"/>
-    <Button android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Salvar"/>
-</LinearLayout>
+</ScrollView>
