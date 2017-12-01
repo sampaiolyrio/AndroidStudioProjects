@@ -6,5 +6,5 @@
         android:id="@+id/menu_formulario_ok"
         android:title="Ok"
         android:icon="@drawable/ic_confirmar"
-        android:showAsAction="always"/>
+        app:showAsAction="always"/>
 </menu>

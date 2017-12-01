@@ -29,7 +29,7 @@ public class FormularioActivity extends AppCompatActivity {
 
         final FormularioHelper helper = new FormularioHelper(this);
 
-        Button botaoSalvar  = (Button) findViewById(R.id.formulario_salvar);
+        /*Button botaoSalvar  = (Button) findViewById(R.id.formulario_salvar);
         botaoSalvar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -39,7 +39,7 @@ public class FormularioActivity extends AppCompatActivity {
                 //Toast.makeText(FormularioActivity.this,"Botão Clicado",Toast.LENGTH_SHORT).show();
                 finish();
             }
-        });
+        });*/
     }
 
     @Override
@@ -55,30 +55,8 @@ public class FormularioActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menu_formulario_ok:
-
-
-                    //Aluno aluno = helper.pegaAluno();
-
-                    //Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome(), Toast.LENGTH_SHORT).show();
-
-
-
-
-
-
-
-                    /*EditText campoNome = (EditText) findViewById(R.id.formulario_nome);
-                    String nome =campoNome.getText().toString();
-
-                    EditText campoEndereco = (EditText) findViewById(R.id.formulario_endereco);
-                    String endereco = campoNome.getText().toString();
-
-                    EditText campoTelefone = (EditText) findViewById(R.id.formulario_telefone);
-                    String telefone = campoNome.getText().toString();
-
-                    EditText campoSite = (EditText) findViewById(R.id.formulario_site);
-                    String site = campoNome.getText().toString();*/
-
+                   Aluno aluno = helper.pegaAluno();
+                   Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+" salvo", Toast.LENGTH_SHORT).show();
                     finish();
                     break;
             }
