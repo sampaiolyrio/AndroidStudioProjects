@@ -11,19 +11,32 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.lyrio.agenda.modelo.Aluno;
+
 public class FormularioActivity extends AppCompatActivity {
+
+    private FormularioHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
+        helper = new FormularioHelper(this);
+
+        final FormularioHelper helper = new FormularioHelper(this);
+
         Button botaoSalvar  = (Button) findViewById(R.id.formulario_salvar);
         botaoSalvar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(FormularioActivity.this,"Botão Clicado",Toast.LENGTH_SHORT).show();
+                Aluno aluno = helper.pegaAluno();
+
+                Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+" salvo", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FormularioActivity.this,"Botão Clicado",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -42,7 +55,30 @@ public class FormularioActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menu_formulario_ok:
-                    Toast.makeText(FormularioActivity.this, "Aluno Salvo", Toast.LENGTH_SHORT).show();
+
+
+                    //Aluno aluno = helper.pegaAluno();
+
+                    //Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome(), Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+
+                    /*EditText campoNome = (EditText) findViewById(R.id.formulario_nome);
+                    String nome =campoNome.getText().toString();
+
+                    EditText campoEndereco = (EditText) findViewById(R.id.formulario_endereco);
+                    String endereco = campoNome.getText().toString();
+
+                    EditText campoTelefone = (EditText) findViewById(R.id.formulario_telefone);
+                    String telefone = campoNome.getText().toString();
+
+                    EditText campoSite = (EditText) findViewById(R.id.formulario_site);
+                    String site = campoNome.getText().toString();*/
+
                     finish();
                     break;
             }
