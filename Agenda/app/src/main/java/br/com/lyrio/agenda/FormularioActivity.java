@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.lyrio.agenda.dao.AlunoDao;
 import br.com.lyrio.agenda.modelo.Aluno;
 
 public class FormularioActivity extends AppCompatActivity {
@@ -56,6 +57,11 @@ public class FormularioActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.menu_formulario_ok:
                    Aluno aluno = helper.pegaAluno();
+                    AlunoDao dao= new AlunoDao(this);
+                    dao.insere(aluno);
+                    dao.close();
+
+
                    Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+" salvo", Toast.LENGTH_SHORT).show();
                     finish();
                     break;
