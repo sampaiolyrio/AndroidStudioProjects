@@ -26,16 +26,15 @@
         android:layout_height="wrap_content"
             android:id="@+id/formulario_site"/>
 
-        <RatingBar android:hint="Nome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:max="10"
-        android:layout_gravity="center"/>
-        <!--<Button android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Salvar"
-            android:id="@+id/formulario_salvar"/>-->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Nota"
+            android:max="10"
+            android:numStars="5"
+            android:id="@+id/formulario_nota"/>
+
     </LinearLayout>
 
 </ScrollView>

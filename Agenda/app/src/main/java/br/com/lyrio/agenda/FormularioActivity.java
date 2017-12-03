@@ -57,7 +57,7 @@ public class FormularioActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.menu_formulario_ok:
                    Aluno aluno = helper.pegaAluno();
-                    AlunoDao dao= new AlunoDao(this);
+                   AlunoDao dao= new AlunoDao(this);
                     dao.insere(aluno);
                     dao.close();
 

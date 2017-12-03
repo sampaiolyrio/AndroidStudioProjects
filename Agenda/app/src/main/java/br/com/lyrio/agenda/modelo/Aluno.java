@@ -10,7 +10,7 @@ public class Aluno {
     private String endereco;
     private String telefone;
     private String site;
-    private String nota;
+    //private Double nota;
 
     public Long getId() {
         return id;
@@ -52,11 +52,11 @@ public class Aluno {
         this.site = site;
     }
 
-    public String getNota() {
-        return nota;
-    }
+    //public Double getNota() {
+    //    return nota;
+    //}
 
-    public void setNota(String nota) {
-        this.nota = nota;
-    }
+   // public void setNota(Double nota) {
+    //    this.nota = nota;
+    //}
 }

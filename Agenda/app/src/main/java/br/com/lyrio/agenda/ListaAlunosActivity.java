@@ -8,6 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.List;
+
+import br.com.lyrio.agenda.dao.AlunoDao;
+import br.com.lyrio.agenda.modelo.Aluno;
+
 public class ListaAlunosActivity extends AppCompatActivity {
 
     @Override
@@ -15,12 +20,13 @@ public class ListaAlunosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
 
-        //conexao
-        //faz uma busca no banco pra traze
+        AlunoDao dao = new AlunoDao(this);
+        List<Aluno> alunos = dao.buscaAlunos();
+        dao.close();
 
-        String[] alunos = { "Luciana", "Isabel", "Lídia","Luciana", "Isabel", "Lídia","Luciana", "Isabel", "Lídia", "Lídia","Luciana", "Isabel", "Lídia","Luciana", "Isabel"};
+
         ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, alunos);
+        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,android.R.layout.simple_list_item_1, alunos);
         listaAlunos.setAdapter(adapter);
 
 
