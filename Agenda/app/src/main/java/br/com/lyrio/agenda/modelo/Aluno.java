@@ -66,13 +66,16 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
+        return  " "+ id +" - " + nome;
+
+
+        /*"Aluno{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", site='" + site + '\'' +
-                '}';
+                '}';*/
     }
 
 
