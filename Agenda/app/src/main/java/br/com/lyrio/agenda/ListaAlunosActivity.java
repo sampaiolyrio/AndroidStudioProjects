@@ -20,18 +20,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos);
 
-        AlunoDao dao = new AlunoDao(this);
-        List<Aluno> alunos = dao.buscaAlunos();
-        dao.close();
 
-
-        //String[] alunos ={"Daniel", "Ronaldo"};
-        //ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, alunos);
-
-        ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
-        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,android.R.layout.simple_list_item_1, alunos);
-        listaAlunos.setAdapter(adapter);
 
 
         Button novoAluno = (Button) findViewById(R.id.novo_aluno);
@@ -44,4 +33,23 @@ public class ListaAlunosActivity extends AppCompatActivity {
         });
     }
 
+    private void carregaLista() {
+        AlunoDao dao = new AlunoDao(this);
+        List<Aluno> alunos = dao.buscaAlunos();
+        dao.close();
+
+        //String[] alunos ={"Daniel", "Ronaldo"};
+        //ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, alunos);
+
+        ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
+        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,android.R.layout.simple_list_item_1, alunos);
+        listaAlunos.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        carregaLista();
+    }
 }
