@@ -10,7 +10,7 @@ public class Aluno {
     private String endereco;
     private String telefone;
     private String site;
-    //private Double nota;
+    private Double nota;
 
     public Long getId() {
         return id;
@@ -53,16 +53,31 @@ public class Aluno {
     }
 
 
-    //public Double getNota() {
-    //    return nota;
-    //}
+    public Double getNota() {
+        return nota;
+   }
 
-   // public void setNota(Double nota) {
-    //    this.nota = nota;
-    //}
+    public void setNota(Double nota) {
+        this.nota = nota;
+
+
+
+    }
 
     @Override
-    public String toString(){
-        return getId() + "-" +getNome();
+    public String toString() {
+        return "Aluno{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", site='" + site + '\'' +
+                '}';
     }
+
+
+
+
+
+
 }
