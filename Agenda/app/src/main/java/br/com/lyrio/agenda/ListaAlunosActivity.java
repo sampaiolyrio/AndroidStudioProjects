@@ -25,6 +25,10 @@ public class ListaAlunosActivity extends AppCompatActivity {
         dao.close();
 
 
+        //String[] alunos ={"Daniel", "Ronaldo"};
+        //ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, alunos);
+
         ListView listaAlunos = (ListView)findViewById(R.id.lista_alunos);
         ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,android.R.layout.simple_list_item_1, alunos);
         listaAlunos.setAdapter(adapter);

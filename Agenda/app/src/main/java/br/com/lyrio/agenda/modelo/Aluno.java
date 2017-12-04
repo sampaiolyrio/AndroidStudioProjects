@@ -52,6 +52,7 @@ public class Aluno {
         this.site = site;
     }
 
+
     //public Double getNota() {
     //    return nota;
     //}
@@ -59,4 +60,9 @@ public class Aluno {
    // public void setNota(Double nota) {
     //    this.nota = nota;
     //}
+
+    @Override
+    public String toString(){
+        return getId() + "-" +getNome();
+    }
 }

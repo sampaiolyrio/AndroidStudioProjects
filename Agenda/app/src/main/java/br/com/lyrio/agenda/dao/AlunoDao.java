@@ -58,7 +58,7 @@ public class AlunoDao extends SQLiteOpenHelper{
     public List<Aluno> buscaAlunos() {
     String sql = "SELECT * FROM Alunos;";
     SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery(sql, null);
+     Cursor c = db.rawQuery(sql, null);
 
         List<Aluno> alunos = new ArrayList<Aluno>();
         while(c.moveToNext()){
@@ -74,6 +74,6 @@ public class AlunoDao extends SQLiteOpenHelper{
 
         }
         c.close();
-        return null;
+        return alunos;
     }
 }
