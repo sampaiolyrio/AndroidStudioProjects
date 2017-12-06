@@ -29,6 +29,24 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
        listaAlunos = (ListView)findViewById(R.id.lista_alunos);
 
+       listaAlunos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> lista, View view, int position, long id) {
+               Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(position);
+               Toast.makeText(ListaAlunosActivity.this,"Aluno "+ aluno.getNome() + " clicado!", Toast.LENGTH_SHORT).show();
+           }
+       });
+
+       listaAlunos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+           @Override
+           public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+               Toast.makeText(ListaAlunosActivity.this,"clique longo !", Toast.LENGTH_SHORT).show();
+               return false;
+           }
+       });
+
+
+
         Button novoAluno = (Button) findViewById(R.id.novo_aluno);
         novoAluno.setOnClickListener(new View.OnClickListener() {
             @Override
