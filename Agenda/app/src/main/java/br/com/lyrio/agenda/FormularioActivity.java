@@ -26,21 +26,16 @@ public class FormularioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
 
-        helper = new FormularioHelper(this);
+        helper= new FormularioHelper(this);
 
-        final FormularioHelper helper = new FormularioHelper(this);
+        Intent intent = getIntent();
+        Aluno aluno = (Aluno)intent.getSerializableExtra("aluno");
+        if(aluno != null){
+            helper.preencheFormulario(aluno);
+            Toast.makeText(FormularioActivity.this, "Editando o Aluno "+ aluno.getNome()+" ", Toast.LENGTH_SHORT).show();
 
-        /*Button botaoSalvar  = (Button) findViewById(R.id.formulario_salvar);
-        botaoSalvar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Aluno aluno = helper.pegaAluno();
+        }
 
-                Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+" salvo", Toast.LENGTH_SHORT).show();
-                //Toast.makeText(FormularioActivity.this,"Botão Clicado",Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });*/
     }
 
     @Override
@@ -54,20 +49,23 @@ public class FormularioActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.menu_formulario_ok:
-                   Aluno aluno = helper.pegaAluno();
-                   AlunoDao dao= new AlunoDao(this);
+        switch (item.getItemId()) {
+            case R.id.menu_formulario_ok:
+                Aluno aluno = helper.pegaAluno();
+                AlunoDao dao = new AlunoDao(this);
+                if (aluno.getId() != null) {
+                    dao.altera(aluno);
+                } else {
                     dao.insere(aluno);
+                }
+
+
                     dao.close();
-
-
-                   Toast.makeText(FormularioActivity.this, "Aluno "+ aluno.getNome()+" salvo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FormularioActivity.this, "Aluno " + aluno.getNome() + " salvo", Toast.LENGTH_SHORT).show();
                     finish();
                     break;
-            }
-            return super.onOptionsItemSelected(item);
+                }
+                return super.onOptionsItemSelected(item);
 
-    }
-}
+        }}
 

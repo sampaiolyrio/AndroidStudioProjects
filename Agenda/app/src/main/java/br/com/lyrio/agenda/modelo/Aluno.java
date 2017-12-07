@@ -1,10 +1,12 @@
 package br.com.lyrio.agenda.modelo;
 
+import java.io.Serializable;
+
 /**
  * Created by sampa on 30/11/2017.
  */
 
-public class Aluno {
+public class Aluno implements Serializable{
     private Long id;
     private String nome;
     private String endereco;
@@ -77,9 +79,6 @@ public class Aluno {
                 ", site='" + site + '\'' +
                 '}';*/
     }
-
-
-
 
 
 
